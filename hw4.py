@@ -723,7 +723,7 @@ def parse_number(text: str) -> float | None:
 
 
 def normalize(text: str) -> str:
-    """Lower case, no case, punctuation or legal suffix: 'Northgate Robotics Inc.' -> 'northgate robotics'."""
+    """Lower case, no punctuation, no titles, padded with spaces for whole-word matching."""
     text = unicodedata.normalize("NFKC", str(text)).lower().replace("_", " ")
     words = [w for w in re.sub(r"[^a-z0-9]+", " ", text).split() if w not in TITLES]
     return " " + " ".join(words) + " "
