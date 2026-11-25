@@ -1,0 +1,50 @@
+{
+  "B0": {
+    "change": "naive RAG (Tutorial 7): get_text, recursive split, whitespace-token BM25 top-5",
+    "parse": 0.8055555555555556,
+    "recall": 0.6521739130434783,
+    "kept": 1.0,
+    "rejected": 0.0,
+    "accuracy": 0.6666666666666666
+  },
+  "V1": {
+    "change": "+ table_to_text and section-aware chunking",
+    "parse": 0.8055555555555556,
+    "recall": 0.8043478260869565,
+    "kept": 1.0,
+    "rejected": 0.0,
+    "accuracy": 0.7833333333333333
+  },
+  "V2": {
+    "change": "+ query parsing (rules) and company/doc-type metadata filtering",
+    "parse": 0.9722222222222222,
+    "recall": 0.8260869565217391,
+    "kept": 1.0,
+    "rejected": 0.0,
+    "accuracy": 0.85
+  },
+  "V3": {
+    "change": "+ number-aware tokens, idf coverage bonus, per-company retrieval, LLM company extraction",
+    "parse": 1.0,
+    "recall": 1.0,
+    "kept": 1.0,
+    "rejected": 0.0,
+    "accuracy": 0.9666666666666667
+  },
+  "V4": {
+    "change": "+ keep only chunks of documents that state the named year",
+    "parse": 1.0,
+    "recall": 1.0,
+    "kept": 1.0,
+    "rejected": 0.0,
+    "accuracy": 1.0
+  },
+  "V5": {
+    "change": "+ abstention: unknown-company/year rules and the LLM answerability check",
+    "parse": 1.0,
+    "recall": 1.0,
+    "kept": 1.0,
+    "rejected": 1.0,
+    "accuracy": 1.0
+  }
+}
