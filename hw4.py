@@ -716,14 +716,14 @@ LEGAL_SUFFIXES = {"inc", "corp", "corporation", "ltd", "limited", "plc", "llc", 
 
 def parse_number(text: str) -> float | None:
     """The single number in the text, or None if there is not exactly one."""
-    found = NUMBER_RE.findall(text.replace("−", "-"))
+    found = NUMBER_RE.findall(text.replace("\u2212", "-"))
     if len(found) != 1:
         return None
     return float(found[0].replace(",", ""))
 
 
 def normalize(text: str) -> str:
-    """Lower case, no punctuation, no titles, padded with spaces for whole-word matching."""
+    """Lower case, no case, punctuation or legal suffix: 'Northgate Robotics Inc.' -> 'northgate robotics'."""
     text = unicodedata.normalize("NFKC", str(text)).lower().replace("_", " ")
     words = [w for w in re.sub(r"[^a-z0-9]+", " ", text).split() if w not in TITLES]
     return " " + " ".join(words) + " "
